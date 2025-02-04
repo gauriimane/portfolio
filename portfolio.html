@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gauri Sunil Mane Portfolio</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e9f5db; /* Light green background */
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header Section */
+    header {
+      text-align: center;
+      background-color:#87986a; /* Soft green */
+      color: white;
+      padding: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    header p {
+      margin: 5px 0;
+    }
+
+    /* Navigation Links Below Header */
+    .nav-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .nav-links a {
+      margin: 0 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #87986a ; /* Matching soft green */
+      padding: 10px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      background-color: #87986a;
+      color: white;
+      border-radius: 5px;
+    }
+
+    /* Profile Section and About Me Side-by-Side */
+    .profile-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 40px auto;
+      gap: 60px; /* Increased gap for better spacing */
+      flex-wrap: wrap;
+    }
+
+    .profile-box {
+      width: 400px; /* Reduced width */
+      height: 550px; /* Slightly reduced height */
+      background-color: white;
+      border: 2px solid #87986a;
+      border-radius: 15px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+      text-align: center;
+      padding: 30px; /* Adjusted padding */
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .profile-pic {
+      width: 350px; /* Reduced profile picture width */
+      height: 450px; /* Reduced height */
+      border-radius: 15px; /* Rounded corners */
+      border: 4px solid #87986a; /* Thicker border for the profile picture */
+      margin-bottom: 20px; /* More space below the picture */
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05); /* Zoom effect on hover */
+    }
+
+    .profile-info {
+      font-size: 18px; /* Slightly larger text */
+      font-weight: bold;
+      color: #87986a;
+      margin-top: 15px;
+    }
+
+    .about-me {
+      width: 50%;
+      font-size: 18px;
+      color: #7f9469;
+      background-color: white;
+      border: 2px solid #87986a;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-me h2 {
+      text-align: center;
+      color: #87986a;
+    }
+
+    /* Section Box Design */
+    .section-boxes {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .section-box {
+      width: 250px;
+      background-color: white;
+      border: 2px solid #87986a;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #87986a;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .section-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+      background-color: #87986a;
+      color: white;
+    }
+
+    /* Hidden Sections */
+    .hidden-section {
+      display: none;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    input[id="skills"]:checked ~ #skills,
+    input[id="academic"]:checked ~ #academic,
+    input[id="resume"]:checked ~ #resume,
+    input[id="experience"]:checked ~ #experience,
+    input[id="education"]:checked ~ #education,
+    input[id="project"]:checked ~ #project {
+        display: block;
+    }
+
+
+    .hidden-section h2 {
+      text-align: center;
+      color: #87986a;
+    }
+
+    /* Tabs */
+    .tab {
+      display: flex;
+      justify-content: space-around;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .tab button {
+      background-color: #f1f1f1;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 18px;
+      color: #87986a;
+      transition: background-color 0.3s;
+    }
+
+    .tab button:hover {
+      background-color: #87986a;
+      color: white;
+    }
+
+    .tab button.active {
+      background-color: #87986a;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #87986a;
+      color: white;
+      padding: 20px 10px;
+      margin-top: 20px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    /* Table styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table, th, td {
+      border: 2px solid #87986a;
+      text-align: center;
+      padding: 10px;
+    }
+
+    th {
+      background-color: #87986a;
+      color: white;
+    }
+
+    td {
+      background-color: #f9f9f9;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #e0f7e3;
+    }
+    .education-row {
+    display: flex;
+    justify-content: center; /* Center the images in the row */
+    gap: 20px; /* Space between the images */
+    margin-bottom: 20px; /* Space below the row */
+    }
+
+    .education-item {
+    text-align: center;
+    width: 300px; /* Adjust width as needed */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .education-item:hover {
+    transform: scale(1.05); /* Add a hover effect for better visuals */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .education-item img {
+    width: 100%; /* Make the image fill the item container */
+    height: 200px; /* Adjust height to ensure consistency */
+    object-fit: cover; /* Ensure the image scales nicely */
+    border-bottom: 2px solid #87986a; /* Add a border for design */
+    }
+
+    .education-item p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #87986a;
+    padding: 0 10px;
+    }
+
+    /* New Certificate Box for Skills Section */
+    .certificate-box {
+    width: 250px;
+    background-color: white;
+    border: 2px solid #87986a; /* Matching border color */
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #87986a;
+    margin-top: 20px;
+    }
+
+    .certificate-box a {
+    text-decoration: none;
+    color: #87986a;
+    font-weight: bold;
+    }
+
+    .certificate-box a:hover {
+    color: #87986a;
+    text-decoration: underline;
+    }
+
+    .experience-section {
+      margin-top: 40px;
+    }
+
+    .certificate-box {
+      display: inline-block;
+      position: relative;
+      border: 2px solid #87986a; /* Green border */
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      overflow: hidden;
+      text-align: center;
+      width: 300px; /* Fixed width for consistency */
+      height: auto;
+    }
+
+    .certificate-box img {
+      width: 100%; /* Makes image width adjust to the container */
+      height: auto; /* Maintains aspect ratio */
+      border-bottom: 2px solid #87986a; /* Border below image */
+    }
+
+    .certificate-box .title {
+      position: absolute;
+      bottom: 10px; /* Positioned at the bottom of the box */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      color: white;
+      font-size: 18px;
+      padding: 10px 10px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .certificate-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    /* Project Section Table */
+        .project-box {
+        width: 250px;
+        background-color: white;
+        border: 2px solid #87986a; /* Matching border color */
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;
+        color: #87986a;
+        margin-top: 20px;
+        display: inline-block;
+        position: relative;
+    }
+
+    .project-box h3 {
+        margin-bottom: 15px;
+        font-size: 18px;
+        color: #87986a;
+    }
+
+    .project-box a {
+        text-decoration: none;
+        color: #87986a;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    .project-box a:hover {
+        color: #87986a;
+        text-decoration: underline;
+    }
+
+    .project-box a:active {
+        color: #87986a;
+    }
+
+    /* Centering the Project Box */
+    #project {
+        text-align: center;
+    }
+
+        /* Resume Box */
+    .resume-box {
+        width: 100%;
+        max-width: 600px; /* Adjust as needed */
+        margin: 0 auto;
+        border: 3px solid #87986a; /* Matching green border */
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        overflow: hidden; /* Hide any overflow */
+    }
+
+    /* Image inside the box */
+    .resume-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* This ensures the image adjusts to fit the box */
+        border-radius: 15px; /* Optional: Rounded corners for the image */
+    }
+
+    @media (max-width: 600px) {
+        nav {
+            flex-direction: column; /* Stacks navigation links vertically */
+        }
+
+        nav a {
+            padding: 10px; /* Reduces padding for smaller screens */
+        }
+
+        .container {
+            grid-template-columns: 1fr; /* Changes grid layout to a single column */
+        }
+    }
+
+  
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gauri Sunil Mane</h1>
+    <p>Computer Science Engineering Student</p>
+  </header>
+
+  <!-- Navigation Links Below Header -->
+  <!-- <div class="nav-links">
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#academic">Academic</a>
+    <a href="#resume">Resume</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#project">Project</a>
+  </div> -->
+
+  <!-- Profile Section and About Me Side-by-Side -->
+  <div class="profile-container">
+    <div class="profile-box">
+      <a href="https://www.linkedin.com/in/gauri-mane-0092a429a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+        <img src="gauri pic.jpeg" alt="Profile Picture" class="profile-pic">
+      </a>
+      <p class="profile-info">B.Tech CSE AIML - SY VIT '27</p>
+    </div>
+
+    <div class="about-me" id="about">
+      <h2>About Me</h2>
+      <div>
+        <p>
+          An enthusiastic and motivated undergraduate student currently pursuing a <strong>B.Tech degree in Computer Science and Engineering (AIML)</strong>. I am eager to apply my knowledge in artificial intelligence, programming, and data analysis to contribute to innovative projects. I am keen on enhancing my skills and pursuing opportunities that challenge my technical and problem-solving abilities in the tech industry.
+        </p>
+        <p>Key Skills:</p>
+        <ul>
+          <li>Highly organized with a positive attitude.</li>
+          <li>Strong teamwork abilities and a collaborative mindset.</li>
+          <li>Exceptional at meeting deadlines and managing time efficiently.</li>
+          <li>Critical thinking skills to tackle challenges effectively.</li>
+        </ul>
+        <p>
+          I am eager to utilize these skills to contribute to innovative projects and deliver impactful outcomes in dynamic environments.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Boxes for Skills, Academic, Resume, Experience, Education, and Project -->
+  <div class="section-boxes">
+    <label class="section-box" for="skills">Skills</label>
+    <label class="section-box" for="academic">Academic</label>
+    <label class="section-box" for="resume">Resume</label>
+    <label class="section-box" for="experience">Experience</label>
+    <label class="section-box" for="education">Education</label>
+    <label class="section-box" for="project">Project</label>
+  </div>
+
+  <!-- Radio buttons to trigger the visibility of sections -->
+  <input type="radio" id="skills" name="section" />
+  <input type="radio" id="academic" name="section" />
+  <input type="radio" id="resume" name="section" />
+  <input type="radio" id="experience" name="section" />
+  <input type="radio" id="education" name="section" />
+  <input type="radio" id="project" name="section" />
+
+  <!-- Skills Section with Tabs for Certificates -->
+  <div id="skills" class="hidden-section">
+    <h2>Skills</h2>
+    <div class="tab">
+      <button class="tablinks" id="defaultTab">Skills Overview</button>
+      <button class="tablinks">Certificates</button>
+    </div>
+
+    <div class="tabcontent active">
+      <p>- C++ for Beginners - Infosys Springboard </p>
+      <p>- Data Visualization With Power BI - Great Learning </p>
+      <p>- Object Oriented Programming in Java Course Online - Scaler</p>
+      <p>- Java DSA Course - Master the Fundamentals and Beyond - Scaler</p>
+      <p>- CCNA: Introduction to Networks - Cisco Networking Academy</p>
+      <p>- Power BI Workshop - Office Master</p>
+      <p>- Introduction to Data Science - Cisco Networking Academy</p>
+      <p>- Cybersecurity - Skill India Digital Hub</p>
+      <p>- Figma Bootcamp - LetsUpgrade</p>
+      <p>- Programming with Python - Internshala Trainings</p>
+    </div>
+
+    <!-- New Section for Certificate Link -->
+  <div class="certificate-box">
+    <h2>View Certificates</h2>
+    <a href="certificate.html" >Click Here</a>
+  </div>
+
+  </div>
+
+  <!-- Academic Section with Table -->
+  <div id="academic" class="hidden-section">
+    <h2>Academic</h2>
+    <div class="tab">
+      <button class="tablinks" id="defaultTab">Academic Overview</button>
+    </div>
+
+    <div class="tabcontent active">
+      <p>- B.Tech CSE-AIML</p>
+      <p>- Vishwakarma Institute of Technology, Kondhwa Campus</p>
+    </div>
+
+    <div class="tabcontent">
+      <table>
+        <tr>
+          <th>Academic Year</th>
+          <th>Semester & Year</th>
+          <th>SGPA</th>
+          <th>CGPA</th>
+        </tr>
+        <tr>
+          <td>2023-24</td>
+          <td>Semester 1</td>
+          <td>8.21</td>
+          <td> - </td>
+        </tr>
+        <tr>
+          <td>2023-24</td>
+          <td>Semester 2</td>
+          <td>7.91</td>
+          <td>8.05</td>
+        </tr>
+        <tr>
+            <td>2024-25</td>
+            <td>Semester 2</td>
+            <td>8.10</td>
+            <td>8.06</td>
+          </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Resume Section -->
+  <div id="resume" class="hidden-section">
+    <h2>Resume</h2>
+    <!-- Resume Section with clickable image -->
+    <section id="resume">
+    <a href="resume.pdf" target="_blank">
+      <div class="resume-box">
+        <img src="resume.png" alt="Resume Image" />
+      </div>
+    </a>
+  </section>
+  
+  </div>
+  
+
+  <!-- Experience Section -->
+  <div id="experience" class="hidden-section">
+    <div class="experience-section" class="certificate-container">
+    <h2>Experience</h2>
+    <p>- Event Management - AIMSS VIIT</p>
+    <p>- Competitive Examination Cell ,VIIT 
+
+    <!-- Certificate Box 1: Exam Coordinator CAT/GMAT -->
+    <div class="certificate-box">
+        <img src="exam co-ordinator .jpeg" alt="Exam Coordinator CAT/GMAT">
+        <div class="title">Exam Coordinator CAT/GMAT</div>
+      </div>
+      
+      <!-- Certificate Box 2: Associate Dept Head (AIML) -->
+      <div class="certificate-box">
+        <img src="asso. dept head.jpeg" alt="Associate Dept Head (AIML)">
+        <div class="title">Associate Dept Head (AIML)</div>
+      </div>
+    </p>
+
+    </div>
+  </div>
+
+<!-- Education Section -->
+<div id="education" class="hidden-section">
+    <div class="education-row" class="education-item">
+    <div class="education-item">
+      <p>Sinhagad City School, Pune - Primary and Secondary Education</p>
+      <img src="sinhagad-city-school.jpg" alt="Sinhagad City School" class="education-img">
+    </div>
+    <div class="education-item">
+      <p>Matrix Academy School, Virar West - Primary and Secondary Education</p>
+      <img src="matrix-academy.jpg" alt="Matrix Academy School" class="education-img">
+    </div>
+    <div class="education-item">
+      <p>City International School,<br> Pune - Secondary Education</p>
+      <img src="cis.jpg" alt="City International School" class="education-img">
+    </div>
+    <div class="education-item">
+      <p>Muktangan Jr. College, Pune - Higher Secondary Education</p>
+      <img src="muktangan-jr-college.jpg" alt="Muktangan Jr. College" class="education-img">
+    </div>
+    <div class="education-item">
+      <p>Vishwakarma Institute of Technology, Pune - CS Engineering</p>
+      <img src="vit-college.jpg" alt="Vishwakarma Institute of Technology" class="education-img">
+    </div>
+    </div>
+  </div>
+  
+  <!-- Project Section -->
+  <div id="project" class="hidden-section">
+    <h2>Project</h2>
+    <div class="project-box">
+      <h2>Click Here</h2>
+      <a href="https://github.com/gauriimane/fantasy_cricket_project" target="_blank">GitHub Repository</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Email: <a href="mailto:mane.gauri1106@gmail.com">mane.gauri1106@gmail.com</a></p>
+    <p>Phone: <a href="tel:+918390011410">+91-8390011410</a></p>
+  </footer>
+     
+</body>
+</html>

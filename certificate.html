@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9f5db;
+            color: #333;
+        }
+        header {
+            background-color: #87986a;
+            color: #FFFFFF;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .certificates {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .certificate {
+            background: #FFFFFF;
+            border: 1px solid #87986a;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .certificate:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+        .certificate img {
+            width: 100%;
+            height: auto;
+        }
+        .certificate h3 {
+            margin: 0;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.2rem;
+            background-color: #e0f7e3;
+            color: #87986a;
+        }
+        a {
+            text-decoration: none;
+            color: #87986a;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #87986a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Certificates Showcase</h1>
+        <p>A collection of my achievements</p>
+    </header>
+
+    <div class="container">
+        <div class="certificates">
+            <!-- Certificate 1 -->
+            <div class="certificate">
+                <img src="C++ for Beginners.jpg" alt="Certificate 1">
+                <h3>C++ for Beginners - Infosys Springboard</h3>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="certificate">
+                <img src="Data Visualisation with Power BI.jpg" alt="Certificate 2">
+                <h3>Data Visualization With Power BI - Great Learning</h3>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="certificate">
+                <img src="OOPS Java Certificate.jpg" alt="Certificate 3">
+                <h3>Object Oriented Programming in Java Course Online - Scaler</h3>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="certificate">
+                <img src="Java DSA Certificate.jpg" alt="Certificate 4">
+                <h3>Java DSA Course - Master the Fundamentals and Beyond - Scaler</h3>
+            </div>
+
+            <!-- Certificate 5 -->
+            <div class="certificate">
+                <img src="CCNA_Introduction to Networks.jpg" alt="Certificate 5">
+                <h3>CCNA: Introduction to Networks - Cisco Networking Academy</h3>
+            </div>
+
+            <!-- Certificate 6 -->
+            <div class="certificate">
+                <img src="Power BI Workshop__page-0001.jpg" alt="Certificate 6">
+                <h3>Power BI Workshop - Office Master</h3>
+            </div>
+
+            <!-- Certificate 7 -->
+            <div class="certificate">
+                <img src="Introduction to Data Science - Cisco.jpg" alt="Certificate 7">
+                <h3>Introduction to Data Science - Cisco Networking Academy</h3>
+            </div>
+
+            <!-- Certificate 8 -->
+            <div class="certificate">
+                <img src="Gauri Mane Cybersecurity Certificate_page-0001.jpg" alt="Certificate 8">
+                <h3>Cybersecurity - Skill India Digital Hub</h3>
+            </div>
+
+            <!-- Certificate 9 -->
+            <div class="certificate">
+                <img src="Figma Bootcamp.jpg" alt="Certificate 9">
+                <h3>Figma Bootcamp - LetsUpgrade</h3>
+            </div>
+
+            <!-- Certificate 10 -->
+            <div class="certificate">
+                <img src="Programming with Python Training - Internshala.jpg" alt="Certificate 10">
+                <h3>Programming with Python - Internshala Trainings</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
